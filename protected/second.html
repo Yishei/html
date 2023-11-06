@@ -4,30 +4,50 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Israel Time</title>
-    <script src="./second.js"></script>
     <style>
       body {
         display: flex;
         flex-direction: column;
-        justify-content: center;
         align-items: center;
+        justify-content: center;
         height: 100vh;
         margin: 0;
         background-color: #f4f4f4;
         font-family: Arial, sans-serif;
       }
-      #israel-display {
-        font-size: 3em;
+
+      #video {
+        width: 50%; /* Reduced width */
+        height: auto;
       }
-      #local-time {
-        font-size: 1.5em;
+
+      button {
+        margin: 10px;
+        padding: 10px 20px;
+        font-size: 1em;
+        border: none;
+        border-radius: 5px;
+        color: white;
+        background-color: #007BFF;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #0056b3;
+      }
+
+      #recording-indicator {
+        display: none;
+        color: red;
+        font-weight: bold;
       }
     </style>
   </head>
   <body>
-    <h1>Time In Israel</h1>
-    <p id="israel-display"></p>
-    <h4>Local Time</h4>
-    <p id="local-display"></p>
+    <video muted id="video" autoplay></video>
+    <div id="recording-indicator">Recording...</div> <!-- New recording indicator -->
+    <button id="btn">Start recording</button>
+    <button id="stopbtn">Stop recording</button>
+    <script src="./script.js"></script>
   </body>
 </html>
